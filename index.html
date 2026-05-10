@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="initial-scale=1, width=device-width" />
+  <link rel="stylesheet" href="./global.css" />
+  <link rel="stylesheet" href="./index.css" />
+</head>
+<body>
+  <div class="app-container">
+    <!-- Header -->
+    <div class="header-container">
+      <img class="app-logo-icon" alt="App Logo" src="./public/icons/applogo.svg" />
+      <div class="title">Lurch App</div>
+      <!-- Minimize and Close buttons -->
+      <div class="window-buttons">
+        <!-- Minimize -->
+        <img class="app-logo-icon" alt="Minimize" src="./public/icons/minimize.svg" onclick="minimizeApp();" />
+        <!-- Close -->
+        <img class="app-logo-icon" alt="Close" src="./public/icons/close.svg" onclick="closeApp();" />
+      </div>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-app">
+      <!-- Welcome text -->
+      <div class="description-container">
+        <div class="description-text">Welcome to the lurch app.</div>
+      </div>
+
+      <!-- Input selection and Start/Stop button -->
+      <div class="start-container">
+        <!-- Dropdown menu for input selection -->
+        <div class="dropdown">
+          <select id="input-select">
+            <option value="">Select your input 🠟</option>
+                <option class='input' value="Scroll wheel down">Scroll wheel up </option>
+                <option class='input' value="Scroll wheel up">Scroll wheel down</option>
+                <option class='input' value="Spacebar">Spacebar</option>
+            <!-- Add options here -->
+          </select>
+        </div>
+        <!-- Start/Stop button -->
+        
+        <button id="start-button" class="btn" onclick="startLogging()">Start</button>
+        <button id="stop-button" class="btn-stop" onclick="stopLogging()" hidden>Stop</button>
+
+        <div class="description-container" id="status-message" hidden>
+          <div id="description-stop" hidden>
+            <i>Your lurch app is now </i><b class="running">running</b><i>. You can minimize this window.</i>
+          </div>
+          <div id="description-start">
+            <i>Select your jump input and press start to initialize the app.</i>
+          </div>
+          <div id="description-input" hidden>
+            <i>Please select your jump input before starting the Lurch App.</i>
+          </div>
+          
+        </div>
+      </div>
+
+<!-- Volume adjustment -->
+<div class="volume-container">
+    <div class="adjust-volume">Adjust volume</div>
+    <div class="minus" onclick="changeVolume(-0.1);">
+      <img class="icon1" alt="Decrease volume" src="./public/icons/minus.svg" />
+    </div>
+    <div class="div">9</div> <!-- Dynamically updated volume level -->
+    <div class="minus" onclick="changeVolume(0.1);">
+      <img class="icon2" alt="Increase volume" src="./public/icons/plus.svg" />
+    </div>
+  </div>
+  
+
+      <!-- Creator information -->
+      <div class="createdby-container">
+        <div class="adjust-volume">created by</div>
+        <div class="social-container">
+          <div class="guiopapai">@guiopapai</div>
+          <div class="social-icons-container">
+            <!-- Social media icons -->
+            <a href="http://twitch.tv/guiopapai"><img class="twitch-icon" alt="Twitch" src="./public/icons/twitchicon.svg" /></a>
+            <a href="http://tiktok.com/@guiopapai"><img class="tiktok-icon" alt="TikTok" src="./public/icons/tiktokicon.svg" /></a>
+            <a href="http://youtube.com/@guiopapai"><img class="youtube-icon" alt="YouTube" src="./public/icons/youtubeicon.svg" /></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Learning resources -->
+      <div class="createdby-container">
+        <div class="adjust-volume">learn movement here</div>
+        <a href="https://www.reddit.com/r/Apexrollouts/"><div class="social-container1">
+          <img class="reddit-icon" alt="Reddit" src="./public/icons/redditicon.svg" />
+          <div class="guiopapai">/Apexrollouts</div>
+        </div></a>
+      </div>
+    </div>
+    <div class="version">v1.0.0</div>
+  </div>
+  
+
+  <script src="renderer.js"></script>
+</body>
+</html>

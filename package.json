@@ -1,0 +1,54 @@
+{
+  "name": "lurch-app",
+  "version": "1.0.0",
+  "description": "An app to help players to better understand the lurch window",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "build": {
+    "appId": "com.guiopapai.lurchapp",
+    "productName": "LurchApp",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "icon": "./public/icons/applogo.ico",
+      "target": [
+        {
+          "target": "portable", 
+          "arch": [
+            "ia32"
+          ]
+        }
+      ]
+    },
+    "asar": true,
+    "files": [
+      "main.js",
+      "index.html",
+      "global.css",
+      "index.css",
+      "./public/**/*",
+      "package.json",
+      "renderer.js",
+      "lurch-start.mp3",
+      "lurch-end.mp3",
+      "node_modules/**/*",
+      "!**/*.{o,hprof,orig,pyc,pyo,rbc}",
+      "!**/._*",
+      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
+      "!**/node_modules/*.d.ts",
+      "!**/node_modules/.bin"
+    ]
+  },
+  "dependencies": {
+    "@mechakeys/iohook": "^1.1.1"
+  },
+  "devDependencies": {
+    "electron": "^25.9.7",
+    "electron-builder": "^24.9.1"
+  }
+}

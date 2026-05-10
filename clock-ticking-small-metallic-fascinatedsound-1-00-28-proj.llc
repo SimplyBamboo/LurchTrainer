@@ -1,0 +1,11 @@
+{
+  version: 1,
+  mediaFileName: 'clock-ticking-small-metallic-fascinatedsound-1-00-28.mp3',
+  cutSegments: [
+    {
+      start: 0.20404632972972972,
+      end: 0.3627490306306306,
+      name: '',
+    },
+  ],
+}

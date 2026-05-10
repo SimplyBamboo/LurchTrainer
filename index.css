@@ -1,0 +1,304 @@
+.app-logo-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+  }
+
+  .app-logo-icon:hover{
+    background-color: #424242;
+  }
+  .title {
+    flex: 1;
+    position: relative;
+    font-weight: 600;
+  }
+  .app-header {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 0 var(--padding-5xs);
+    gap: var(--gap-9xs);
+ 
+  }
+  .minimize-child {
+    position: absolute;
+    top: 17px;
+    left: 5px;
+    background-color: var(--light-ivory);
+    width: 14.83px;
+    height: 2px;
+  }
+  .header-container,
+  .window-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-9xs);
+  }
+  .header-container {
+    border-bottom: 1px solid var(--dark-stroke);
+    align-self: stretch;
+    height: 36px;
+    gap: var(--gap-5xs);
+  }
+  .description-text {
+    align-self: stretch;
+    position: relative;
+  }
+  .description-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .text {
+    flex: 1;
+    position: relative;
+  }
+  .dropdown,
+  .text-parent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .text-parent {
+    align-self: stretch;
+    flex-direction: row;
+    gap: var(--gap-5xs);
+  }
+/* Add custom styling for the dropdown */
+.dropdown select {
+  -webkit-appearance: none; /* Removes default chrome and safari style */
+  -moz-appearance: none;    /* Removes default style Firefox */
+  appearance: none;         /* Removes default style for IE */
+  border-radius: var(--br-5xs);
+  background-color: var(--dark-secondary);
+  border: 1px solid var(--dark-stroke);
+  height: 36px;
+  font-weight: 300;
+  padding: 0 var(--padding-base);
+  color: var(--text-primary); /* Text color */
+  font-family: var(--body); /* Font family from your variable */
+  font-size: var(--body-size); /* Font size from your variable */
+  cursor: pointer; /* Changes cursor to pointer to indicate it's clickable */
+  width: 100%; /* Makes the select box take up 100% of the container width */
+}
+
+/* Styling for option elements */
+.dropdown select option {
+  background: var(--dark-secondary); /* Option background color */
+  color: var(--text-primary); /* Option text color */
+}
+
+
+/* Make sure your .dropdown div is positioned relatively */
+.dropdown {
+  position: relative;
+}
+
+  .btn-stop {
+    border-radius: var(--br-5xs);
+    background-color: var(--red);
+    border: 1px solid #ff6767;
+    box-sizing: border-box;
+    height: 36px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-base);
+    text-align: center;
+    color: var(--light-ivory);
+  }
+
+
+  .btn,
+  .btn-stop,
+  .dropdown,
+  .text1 {
+    align-self: stretch;
+  }
+  .text1 {
+    position: relative;
+    font-weight: 600;
+  }
+  .btn {
+    border-radius: var(--br-5xs);
+    background-color: var(--dark-secondary);
+    border: 1px solid #3e3e3e;
+    box-sizing: border-box;
+    height: 36px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-base);
+    text-align: center;
+    color: var(--light-ivory);
+  }
+
+  .btn:disabled {
+    background-color: gray; /* Example: Gray background */
+    color: white; /* Example: White text */
+    cursor: not-allowed; /* Cursor to indicate the button is not clickable */
+    /* Add any other styles you want for the disabled state */
+  }
+
+  .btn:hover{
+    border: 1px solid #569AFF;
+  }
+  .running {
+    color: #adff00;
+  }
+  .start-container {
+    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-5xs);
+  }
+  .adjust-volume,
+  .icon1 {
+    position: relative;
+  }
+  .icon1 {
+    width: 10px;
+    height: 2.46px;
+  }
+  .minus {
+    border-radius: var(--br-9xs);
+    border: 1px solid var(--dark-secondary);
+    box-sizing: border-box;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: var(--padding-9xs);
+  }
+  .div,
+  .icon2 {
+    position: relative;
+  }
+  .div {
+    color: var(--light-ivory);
+    text-align: center;
+    display: inline-block;
+    width: 18px;
+    flex-shrink: 0;
+  }
+  .icon2 {
+    width: 12px;
+    height: 12px;
+  }
+  .volume-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+  .guiopapai {
+    position: relative;
+  }
+  .twitch-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .social-icons-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-base);
+  }
+  .createdby-container,
+  .social-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .social-container {
+    justify-content: center;
+    gap: var(--gap-base);
+    color: var(--light-ivory);
+  }
+  .createdby-container {
+    justify-content: flex-start;
+    gap: var(--gap-5xs);
+  }
+  .reddit-icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+  .social-container1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-ivory);
+  }
+  .app-container,
+  .main-app {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .main-app {
+    padding: 24px;
+    gap: 24px;
+    min-width: 360px;
+    max-width: 360px;
+    font-size: var(--body-size);
+    color: var(--text-secondary);
+  }
+  .app-container {
+    border: 1px solid var(--dark-stroke);
+    position: relative;
+    background-color: var(--dark-background);
+    padding: var(--padding-5xs);
+    gap: var(--gap-5xs);
+    text-align: left;
+    font-size: 20px;
+    color: var(--text-primary);
+    font-family: var(--body);
+  }
+
+  .input{
+    font-weight: 300;
+  }
+  
+
+  .version{
+    color: var(--text-secondary);
+    font-size: 12px;
+    font-family: var(--body);
+  }
+
+  /* CSS file */
+
+.header-container {
+  -webkit-app-region: drag; /* Makes this element a draggable region */
+}
+
+/* You might want to exclude buttons or other interactive elements from being draggable */
+.window-buttons {
+  -webkit-app-region: no-drag;
+}
+
+a {
+color: inherit; /* blue colors for links too */
+text-decoration: inherit; /* no underline */
+}
