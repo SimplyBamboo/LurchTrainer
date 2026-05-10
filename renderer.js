@@ -1,11 +1,31 @@
-const { ipcRenderer } = require('electron');
-const { shell } = require('electron');
+const { ipcRenderer, shell } = require('electron');
 
 const startAudio = new Audio('./lurch-start.mp3');
 const endAudio = new Audio('./lurch-end.mp3');
 
 let currentVolume = 0.5; // Starting volume level
 let isTimerActive = false; // Flag to indicate if the timer is active
+
+// Expose functions globally for onclick handlers
+window.minimizeApp = function() {
+  ipcRenderer.send('minimize-app');
+};
+
+window.closeApp = function() {
+  ipcRenderer.send('close-app');
+};
+
+window.changeVolume = function(change) {
+  currentVolume += change;
+  currentVolume = Math.min(Math.max(currentVolume, 0), 1); // Keep volume between 0 and 1
+
+  // Update the volume display
+  const volumeDisplay = document.querySelector('.div'); // Assuming '.div' is your volume display element
+  volumeDisplay.textContent = Math.round(currentVolume * 10); // Display volume as a number between 0 and 10
+
+  startAudio.volume = currentVolume;
+  endAudio.volume = currentVolume;
+};
 
 function playSounds() {
   if (!isTimerActive) {
@@ -19,26 +39,6 @@ function playSounds() {
       isTimerActive = false; // Reset the flag after playing the second sound
     }, 400);
   }
-}
-// Function to change the volume
-function changeVolume(change) {
-  currentVolume += change;
-  currentVolume = Math.min(Math.max(currentVolume, 0), 1); // Keep volume between 0 and 1
-
-  // Update the volume display
-  const volumeDisplay = document.querySelector('.div'); // Assuming '.div' is your volume display element
-  volumeDisplay.textContent = Math.round(currentVolume * 10); // Display volume as a number between 0 and 10
-
-  startAudio.volume = currentVolume;
-  endAudio.volume = currentVolume;
-}
-
-function minimizeApp() {
-  ipcRenderer.send('minimize-app');
-}
-
-function closeApp() {
-  ipcRenderer.send('close-app');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
