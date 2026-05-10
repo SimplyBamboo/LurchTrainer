@@ -45,7 +45,7 @@
     ]
   },
   "dependencies": {
-    "@mechakeys/iohook": "^1.1.1"
+    "@spacek33z/iohook": "^0.12.0"
   },
   "devDependencies": {
     "electron": "^25.9.7",

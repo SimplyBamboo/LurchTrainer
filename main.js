@@ -1,5 +1,5 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
-const ioHook = require('@mechakeys/iohook');
+const ioHook = require('@spacek33z/iohook');
 const path = require('path');
 
 let mainWindow;
