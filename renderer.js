@@ -1,10 +1,18 @@
 const { ipcRenderer, shell } = require('electron');
 
-const startAudio = new Audio('./lurch-start.mp3');
-const endAudio = new Audio('./lurch-end.mp3');
-
 let currentVolume = 0.5; // Starting volume level
 let isTimerActive = false; // Flag to indicate if the timer is active
+let startAudio, endAudio;
+
+// Initialize audio after getting paths from main process
+async function initAudio() {
+    const startAudioPath = await ipcRenderer.invoke('get-audio-path', 'lurch-start.mp3');
+    const endAudioPath = await ipcRenderer.invoke('get-audio-path', 'lurch-end.mp3');
+    startAudio = new Audio(startAudioPath);
+    endAudio = new Audio(endAudioPath);
+}
+
+initAudio();
 
 // Expose functions globally for onclick handlers
 window.minimizeApp = function() {
@@ -28,7 +36,7 @@ window.changeVolume = function(change) {
 };
 
 function playSounds() {
-  if (!isTimerActive) {
+  if (!isTimerActive && startAudio && endAudio) {
     isTimerActive = true;
     startAudio.volume = currentVolume;
     endAudio.volume = currentVolume;

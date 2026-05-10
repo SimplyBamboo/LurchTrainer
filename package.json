@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "postinstall": "electron-builder install-app-deps"
   },
   "build": {
     "appId": "com.guiopapai.lurchapp",
@@ -15,13 +16,11 @@
       "output": "dist"
     },
     "win": {
-      "icon": "./public/icons/applogo.ico",
+      "icon": "public/icons/applogo.ico",
       "target": [
         {
-          "target": "portable", 
-          "arch": [
-            "ia32"
-          ]
+          "target": "portable",
+          "arch": ["x64"]
         }
       ]
     },
@@ -31,17 +30,15 @@
       "index.html",
       "global.css",
       "index.css",
-      "./public/**/*",
-      "package.json",
       "renderer.js",
+      "preload.js",
       "lurch-start.mp3",
       "lurch-end.mp3",
-      "node_modules/**/*",
-      "!**/*.{o,hprof,orig,pyc,pyo,rbc}",
-      "!**/._*",
-      "!**/node_modules/*/{test,__tests__,tests,powered-test,example,examples}",
-      "!**/node_modules/*.d.ts",
-      "!**/node_modules/.bin"
+      "public/**/*"
+    ],
+    "extraResources": [
+      "lurch-start.mp3",
+      "lurch-end.mp3"
     ]
   },
   "dependencies": {
