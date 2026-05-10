@@ -18,14 +18,16 @@ function createWindow() {
         webPreferences: {
             nodeIntegration: true,
             contextIsolation: false,
-            enableRemoteModule: true,
-            devTools: false,
-            
-
+            devTools: false
         }
     });
 
     mainWindow.loadFile('index.html');
+    
+    // Handle audio file paths for renderer (for packaged app)
+    ipcMain.handle('get-audio-path', (event, filename) => {
+        return path.join(__dirname, filename);
+    });
 
     ioHook.on('mousewheel', (event) => {
         if (isLoggingActive && selectedInput.startsWith('Scroll wheel')) {
